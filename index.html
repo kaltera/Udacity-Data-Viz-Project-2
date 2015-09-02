@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <script src="http://d3js.org/d3.v3.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="Boroughs.css">
+  <link rel="stylesheet" type="text/css" href="Style.css">
     <script type="text/javascript">  
 
       // Function to draw the boroughs boundaries through geojson file
@@ -43,7 +43,7 @@
         .attr("width",900)
         .attr("height",693)
         .append("image")
-        .attr("xlink:href","London_map2.png")
+        .attr("xlink:href","London_map.png")
         .attr("x","0")
         .attr("y","0")
         .attr("width",900)
@@ -448,10 +448,10 @@
   <script>
 
   // Calling draw_map callback function in order to draw the borough boundaries
-  d3.json("map.geojson", draw_map);
+  d3.json("London.geojson", draw_map);
 
   // Calling draw_data function which will use the data from the tsv file
-  d3.tsv("boroughs2.tsv", function(d){
+  d3.tsv("London_Crimes_Data.tsv", function(d){
 
     // Removing some crime types as the number were too low
     if (d.MajorText != "Fraud & Forgery" && d.MajorText != "Other Notifiable Offences"){
